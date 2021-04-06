@@ -24,5 +24,10 @@ $.getJSON(weatherAlertsUrl, function(data) {
   if (feature.properties.severity === 'Extreme') alertColor = 'purple';
   return { color: alertColor };
 },
+style: function(feature){
+  var alertColor = 'orange';
+  if (feature.properties.severity === 'Minor') alertColor = 'LavenderBlush';
+  return { color: alertColor };
+},
 }).addTo(map);
 });
